@@ -28,6 +28,17 @@ public class ProductDB {
 			System.out.print("Unable to add entry because "+e.getMessage());
 		}
 	}
+	
+	
+	public void addDummyUser() {
+		try {
+			for (int i = 1; i < 5; i++) {
+				
+			}
+		} catch (Exception e) {
+			System.out.print("Unable to add entry because "+e.getMessage());
+		}
+	}
 
 	protected void productRegister(Products products) {
 		try (Connection conn = DBConnection.getCon()) {
@@ -37,7 +48,6 @@ public class ProductDB {
 			statement.setString(2, products.getDescription());
 			statement.setFloat(3, products.getPrice());
 			statement.setInt(4, products.getQuantity());
-			int result = statement.executeUpdate();
 			if (statement.executeUpdate() >= 1)
 				System.out.println("New Item added to Stock");
 			
