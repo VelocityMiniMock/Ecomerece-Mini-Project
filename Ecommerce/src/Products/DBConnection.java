@@ -13,7 +13,7 @@ public class DBConnection {
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ecommerce", "root", "Password");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ecommerce", "root", "Sushen@1997");
 		} catch (Exception e) {
 			System.out.println("Unable to Connect with DataBase "+ e);
 			System.exit(0);

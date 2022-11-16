@@ -7,17 +7,18 @@ import Products.DBConnection;
 import Products.ProductDB;
 import Products.ProductServices;
 import Products.Products;
+import cart.CartDB;
 import orders.OrderDB;
 
 public class Main {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		Main m = new Main();
-		DBConnection db = new DBConnection();
+		CartDB db = new CartDB();
+		System.out.println(db.findcartByuserId(3));
 		
 		
-		OrderDB o = new OrderDB();
-		System.out.println(o.findordersByuserId(1));
+		
 		
 	}
 	
