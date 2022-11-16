@@ -43,6 +43,7 @@ public class UserDB {
 		System.out.print("Unable to add User"+e.getMessage());
 	}
 }
+	@SuppressWarnings("finally")
 	public ArrayList<UserRegistrationDetails> getUserList() {
 		ArrayList<UserRegistrationDetails> list = new ArrayList<>();
 		try (Connection conn = DBConnection.getCon()) {
@@ -60,4 +61,26 @@ public class UserDB {
 			return list;
 		}
 	}
+	
+	public int loginDB(String email,String pass){
+		try (Connection conn = DBConnection.getCon()) {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select userEmailID,userPassword,userId from users where userEmailID='"+email);
+			if(rs.next()) {
+				if(rs.getString(1).equals(email) && rs.getString(2).equals(pass)) {
+					return rs.getInt(3);
+				}
+			}
+			else 
+			{
+				System.out.println("User not Found");
+				System.exit(0);
+				return 0;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return 0; 
+	}
+	
 }
