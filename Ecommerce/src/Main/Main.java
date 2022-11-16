@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Products.DBConnection;
+import Products.ProductDB;
 import Products.ProductServices;
 import Products.Products;
+import orders.OrderDB;
 
 public class Main {
 	Scanner sc = new Scanner(System.in);
@@ -14,7 +16,11 @@ public class Main {
 	public static void main(String[] args) {
 		Main m = new Main();
 		DBConnection db = new DBConnection();
-		m.loginMenu();
+
+		OrderDB o = new OrderDB();
+		System.out.println(o.findordersByuserId(1));
+		
+>>>>>>> branch 'main' of https://github.com/VelocityMiniMock/Ecomerece-Mini-Project.git
 	}
 
 	public void loginMenu() {
