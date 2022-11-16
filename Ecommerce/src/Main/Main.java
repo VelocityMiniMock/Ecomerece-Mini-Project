@@ -20,7 +20,6 @@ public class Main {
 		OrderDB o = new OrderDB();
 		System.out.println(o.findordersByuserId(1));
 		
->>>>>>> branch 'main' of https://github.com/VelocityMiniMock/Ecomerece-Mini-Project.git
 	}
 
 	public void loginMenu() {
