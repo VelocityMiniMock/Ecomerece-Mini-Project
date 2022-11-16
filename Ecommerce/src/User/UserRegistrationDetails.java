@@ -6,8 +6,8 @@ public class UserRegistrationDetails {
 	private String emailID;
 	private String password;
 	private String verifypassword;
-	private int pincode;
 	private String address;
+	private int userID;
 	
 	public String getUserName() {
 		return userName;
@@ -39,16 +39,39 @@ public class UserRegistrationDetails {
 	public void setVerifypassword(String verifypassword) {
 		this.verifypassword = verifypassword;
 	}
-	public int getPincode() {
-		return pincode;
-	}
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
-}
+	
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	
+	public int getUserID() {
+		return userID;
+	}
+	public void setUserID(int userID) {
+		this.userID = userID;
+	}
+	public UserRegistrationDetails(int userID,String userName, String mobileNumber, String emailID, String password, String address) {
+		super();
+		this.userID = userID;
+		this.userName = userName;
+		this.mobileNumber = mobileNumber;
+		this.emailID = emailID;
+		this.password = password;
+		this.address = address;
+	}
+	public UserRegistrationDetails(String userName, String mobileNumber, String emailID, String password,String address) {
+	super();
+	
+	this.userName = userName;
+	this.mobileNumber = mobileNumber;
+	this.emailID = emailID;
+	this.password = password;
+	this.address = address;
+}
+	public UserRegistrationDetails() {
+		
 	}
 }

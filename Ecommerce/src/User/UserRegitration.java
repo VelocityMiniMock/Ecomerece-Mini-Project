@@ -2,7 +2,7 @@ package User;
 import java.util.Scanner;
 
 public class UserRegitration {
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		
 		UserRegistrationDetails urd=new UserRegistrationDetails();
 		
@@ -25,12 +25,12 @@ public class UserRegitration {
 		}else {
 			System.out.println("Please Enter correct Password");
 		}
-		System.out.println("Enter Pincode");
-		urd.setPincode(sc.nextInt());
+		
 		System.out.println("Enter Address");
 		urd.setAddress(sc.next());
 		System.out.println("Your Address has been saved successfully");
 		System.out.println("---Thank you for choosing us---");
 	}
+
 
 }
