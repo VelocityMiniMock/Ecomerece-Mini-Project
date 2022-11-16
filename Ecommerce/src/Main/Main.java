@@ -4,19 +4,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Products.DBConnection;
+import Products.ProductDB;
 import Products.ProductServices;
 import Products.Products;
+import orders.OrderDB;
 
 public class Main {
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {
 		Main m = new Main();
 		DBConnection db = new DBConnection();
-		ProductServices services = new ProductServices();
-		//services.createProductTable();
-		//services.addDummyList();
-		//services.userProductList();
-		System.out.println(services.findProductsById(80));
+		
+		
+		OrderDB o = new OrderDB();
+		System.out.println(o.findordersByuserId(1));
+		
 	}
 	
 	public Products addProduct() {

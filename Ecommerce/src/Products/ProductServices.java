@@ -80,7 +80,7 @@ public class ProductServices extends ProductDB{
 			userProductList();
 			System.out.print("\n\nTo select Product Enter ProductID(PID) : ");
 			int pid = sc.nextInt();
-			if (!isProductAvailable(pid)) {
+			if (isProductAvailable(pid)) {
 				System.out.println("----------------------Menu----------------------");
 				System.out.println("Press 1 - To Buy Product");
 				System.out.println("Press 2 - To Add Product in cart");
