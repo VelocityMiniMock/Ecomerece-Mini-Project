@@ -13,7 +13,7 @@ public class DBConnection {
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ecommerce", "root", "Sushen@1997");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Ecommerce", "root", "Password");
 		} catch (Exception e) {
 			System.out.println("Unable to Connect with DataBase "+ e);
 			System.exit(0);
@@ -23,14 +23,15 @@ public class DBConnection {
 		}
 	}
 
-	public static void createDB() {
-		try (Connection conn = getCon()) {
-			Statement stmt = conn.createStatement();
+	public DBConnection() {
+		try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/", "root", "Password")) {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Statement stmt = con.createStatement();
 			String sql = "CREATE DATABASE Ecommerce";
 			stmt.executeUpdate(sql);
-			System.out.println("Database created successfully...");
+			//System.out.println("Database created successfully...");
 		} catch (Exception e) {
-			System.out.print("Unable to Create Databse because "+e.getMessage());
+//			System.out.print("Unable to Create Databse because "+e.getMessage());
 		}
 	}
 
