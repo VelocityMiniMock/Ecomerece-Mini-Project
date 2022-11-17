@@ -45,7 +45,7 @@ public class UserDB {
 		statement.setString(5, urd.getPassword());
 		int result = statement.executeUpdate();
 		if (statement.executeUpdate() >= 1)
-			System.out.println("New User added to List");
+			System.out.print(".");
 		
 	} catch (Exception e) {
 		System.out.print("Unable to add User"+e.getMessage());
@@ -73,7 +73,7 @@ public class UserDB {
 	public int loginDB(String email,String pass){
 		try (Connection conn = DBConnection.getCon()) {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select userEmailID,userPassword,userId from users where userEmailID='"+email);
+			ResultSet rs = stmt.executeQuery("select userEmailID,userPassword,userId from users where userEmailID='"+email+"'");
 			if(rs.next()) {
 				if(rs.getString(1).equals(email) && rs.getString(2).equals(pass)) {
 					return rs.getInt(3);
