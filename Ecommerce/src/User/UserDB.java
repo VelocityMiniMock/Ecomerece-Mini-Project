@@ -24,7 +24,7 @@ public class UserDB {
 		}
 	}
 	
-	public void addUser(UserRegistrationDetails urd) {
+	public void addUser(Users urd) {
 		
 	try (Connection conn = DBConnection.getCon()) {
 		PreparedStatement statement = conn.prepareStatement(
@@ -44,13 +44,13 @@ public class UserDB {
 	}
 }
 	@SuppressWarnings("finally")
-	public ArrayList<UserRegistrationDetails> getUserList() {
-		ArrayList<UserRegistrationDetails> list = new ArrayList<>();
+	public ArrayList<Users> getUserList() {
+		ArrayList<Users> list = new ArrayList<>();
 		try (Connection conn = DBConnection.getCon()) {
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery("Select * from users");
 			while (rs.next()) {
-				list.add(new UserRegistrationDetails(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6)));
+				list.add(new Users(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6)));
 			}
 
 		} catch (Exception e) {

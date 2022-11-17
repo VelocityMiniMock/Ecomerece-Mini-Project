@@ -1,6 +1,6 @@
 package User;
 
-public class UserRegistrationDetails {
+public class Users {
 	private String userName;
 	private String mobileNumber;
 	private String emailID;
@@ -53,7 +53,7 @@ public class UserRegistrationDetails {
 	public void setUserID(int userID) {
 		this.userID = userID;
 	}
-	public UserRegistrationDetails(int userID,String userName, String mobileNumber, String emailID, String password, String address) {
+	public Users(int userID,String userName, String mobileNumber, String emailID, String password, String address) {
 		super();
 		this.userID = userID;
 		this.userName = userName;
@@ -62,7 +62,7 @@ public class UserRegistrationDetails {
 		this.password = password;
 		this.address = address;
 	}
-	public UserRegistrationDetails(String userName, String mobileNumber, String emailID, String password,String address) {
+	public Users(String userName, String mobileNumber, String emailID, String password,String address) {
 	super();
 	
 	this.userName = userName;
@@ -71,7 +71,7 @@ public class UserRegistrationDetails {
 	this.password = password;
 	this.address = address;
 }
-	public UserRegistrationDetails() {
+	public Users() {
 		
 	}
 }

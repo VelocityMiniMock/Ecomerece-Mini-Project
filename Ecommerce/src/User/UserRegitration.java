@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class UserRegitration {
 public static void main(String[] args) {
 		
-		UserRegistrationDetails urd=new UserRegistrationDetails();
+		Users urd=new Users();
 		
 		System.out.println("------WELCOME TO ECOMMERCE------");
 		System.out.println("----New Regitration----");
