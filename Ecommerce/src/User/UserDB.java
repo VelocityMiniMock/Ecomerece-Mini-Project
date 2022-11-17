@@ -37,7 +37,6 @@ public class UserDB {
 	try (Connection conn = DBConnection.getCon()) {
 		PreparedStatement statement = conn.prepareStatement(
 				"INSERT INTO users (userName, userEmailID, userMobileNumber, userAddress,userPassword) VALUES (?,?,?,?,?);");
-		;
 		statement.setString(1,urd.getUserName());
 		statement.setString(2,urd.getEmailID() );
 		statement.setString(3,urd.getMobileNumber());
