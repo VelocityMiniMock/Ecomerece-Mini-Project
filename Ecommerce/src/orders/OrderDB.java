@@ -10,17 +10,19 @@ import Products.DBConnection;
 import Products.Products;
 
 public class OrderDB {
+	public OrderDB() {
+		createOrderDBTable();
+	}
 
 	public void createOrderDBTable() {
 		try (Connection conn = DBConnection.getCon()) {
 			Statement stmt = conn.createStatement();
 			String sql = "create table Orders(orderId int not null ,userID int not null , ProductID int not null, quantity int not null)";
 			stmt.executeUpdate(sql);
-			System.out.println("Table created successfully...");
+			//System.out.println("Table created successfully...");
 		} catch (Exception e) {
-			System.out.print("Unable to Create Table because "+e.getMessage());
+			//System.out.print("Unable to Create Table because "+e.getMessage());
 		}
-	
 	}
 public void makeOrders(int orderID,int userID,int productID,int quantity) {
 	try (Connection conn = DBConnection.getCon()) {

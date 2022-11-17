@@ -6,22 +6,30 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.mysql.cj.callback.UsernameCallback;
 
-import Main.User;
 import Products.DBConnection;
-import Products.Products;
 
 public class UserDB {
+	public UserDB() {
+		createUserTable();
+	}
+	
 	public void createUserTable() {
 		try (Connection conn = DBConnection.getCon()) {
 			Statement stmt = conn.createStatement();
 			String sql = "create table Users(userId int not null AUTO_INCREMENT,userName varchar(100), userEmailID varchar(100), userMobileNumber varchar(100),userAddress varchar(255),userPassword varchar(255),PRIMARY KEY(userId))";
 			stmt.executeUpdate(sql);
-			System.out.println("Table created successfully...");
+//			System.out.println("Table created successfully...");
 		} catch (Exception e) {
-			System.out.print("Unable to Create Table because "+e.getMessage());
+//			System.out.print("Unable to Create Table because "+e.getMessage());
 		}
+	}
+	
+	public void addDummyUser() {
+		addUser(new Users("Kapil Narkhede","kapil@mail.com","9527533382","Address","Password"));
+		addUser(new Users("Sushen Deshpande","sushen@mail.com","123456789","Address","Password"));
+		addUser(new Users("Harshada Patil","harshada@mail.com","7539514862","Address","Password"));
+		addUser(new Users("Vedant ","vedant@mail.com","321654987","Address","Password"));
 	}
 	
 	public void addUser(Users urd) {

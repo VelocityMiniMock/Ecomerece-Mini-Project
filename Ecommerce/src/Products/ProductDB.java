@@ -8,14 +8,18 @@ import java.util.ArrayList;
 
 public class ProductDB {
 
+	public ProductDB() {
+		createProductTable();
+	}
+	
 	public void createProductTable() {
 		try (Connection conn = DBConnection.getCon()) {
 			Statement stmt = conn.createStatement();
 			String sql = "create table Products(productId int not null AUTO_INCREMENT,productName varchar(100), productDesc varchar(150), price int not null, quantity int not null,PRIMARY KEY(productId))";
 			stmt.executeUpdate(sql);
-			System.out.println("Table created successfully...");
+//			System.out.println("Table created successfully...");
 		} catch (Exception e) {
-			System.out.print("Unable to Create Table because "+e.getMessage());
+//			System.out.print("Unable to Create Table because "+e.getMessage());
 		}
 	}
 	
