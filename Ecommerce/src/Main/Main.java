@@ -24,5 +24,6 @@ public class Main {
 			uDb.addDummyUser();
 		UserServices  userServices = new UserServices();
 		userServices.loginMenu();
+		
 	}
 }
