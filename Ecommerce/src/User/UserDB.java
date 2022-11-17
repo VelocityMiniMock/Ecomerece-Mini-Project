@@ -17,7 +17,7 @@ public class UserDB {
 	public void createUserTable() {
 		try (Connection conn = DBConnection.getCon()) {
 			Statement stmt = conn.createStatement();
-			String sql = "create table Users(userId int not null AUTO_INCREMENT,userName varchar(100), userEmailID varchar(100), userMobileNumber varchar(100),userAddress varchar(255),userPassword varchar(255),PRIMARY KEY(userId))";
+			String sql = "create table Users(userId int not null AUTO_INCREMENT,userName varchar(100), userEmailID varchar(100), userMobileNumber varchar(100),userAddress varchar(255),userPassword varchar(255),CONSTRAINT Person PRIMARY KEY(userId,userEmailID))";
 			stmt.executeUpdate(sql);
 //			System.out.println("Table created successfully...");
 		} catch (Exception e) {
